@@ -37,13 +37,13 @@ public class GreetingStepDef {
 
     @Given("^api is available$")
     public void apiIsAvailable() {
-        String response = apiInvokerUtil.callAPI(apiUrl+"healthcheck");
+        String response = apiInvokerUtil.apiGetOperation(apiUrl+"healthcheck");
         Assertions.assertThat(response).isEqualTo("OK");
     }
 
     @When("^I call greeting endpoint$")
     public void iCallGreetingEndpoint() throws IOException {
-        greetingResponse =  mapper.readValue(apiInvokerUtil.callAPI(apiUrl+"greeting"), Greeting.class);
+        greetingResponse =  mapper.readValue(apiInvokerUtil.apiGetOperation(apiUrl+"greeting"), Greeting.class);
     }
 
     @Then("^The api result is \"([^\"]*)\"$")
