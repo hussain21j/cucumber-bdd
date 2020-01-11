@@ -1,3 +1,4 @@
-com\bdd\RestAPIInvokerUtil.class
+com\bdd\model\Greeting.class
 com\bdd\stepdef\GreetingStepDef.class
 com\bdd\Runner.class
+com\bdd\util\RestAPIInvokerUtil.class
