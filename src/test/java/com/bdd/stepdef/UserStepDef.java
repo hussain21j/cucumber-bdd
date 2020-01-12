@@ -41,7 +41,7 @@ public class UserStepDef {
 
     @When("^I add a new user \"([^\"]*)\" and code \"([^\"]*)\"$")
     public void testAdd(String name, String code) throws Throwable {
-        System.out.println("total :");
+        responseEntity = apiInvokerUtil.apiPostUserOperation(apiUrl+"user", new User(name, code));
     }
 
     @Then("^the result should be (-?\\d+)$")
